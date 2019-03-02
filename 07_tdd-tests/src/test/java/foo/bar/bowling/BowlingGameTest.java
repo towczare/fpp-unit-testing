@@ -39,6 +39,16 @@ class BowlingGameTest {
         Assertions.assertEquals(16, game.score());
     }
 
+    @Test
+    @DisplayName("When player roll one strike, his next 2 rolls should be double pointed")
+    void testSingleStrike() {
+        game.roll(10); // strike
+        game.roll(3);
+        game.roll(4);
+        rollMany(16, 0);
+        Assertions.assertEquals(24, game.score());
+    }
+
     private void rollMany(int n, int pins) {
         for (int i = 0; i < n; i++) {
             game.roll(pins);
