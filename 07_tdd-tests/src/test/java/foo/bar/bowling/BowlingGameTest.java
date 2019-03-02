@@ -13,4 +13,13 @@ public class BowlingGameTest {
         }
         Assertions.assertEquals(0, game.score());
     }
+
+    @Test
+    public void testAllOnesGame() {
+        BowlingGame game = new BowlingGame();
+        for (int i = 0; i < 20; i++) {
+            game.roll(1);
+        }
+        Assertions.assertEquals(20, game.score());
+    }
 }
