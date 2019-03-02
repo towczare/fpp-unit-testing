@@ -10,18 +10,15 @@ public class BowlingGame {
 
     public int score() {
         int score = 0;
-        for (int i = 0; i < rolls.length; i++) {
-            if (rolls[i] + rolls[i + 1] == 10) {
-                /*
-                This isn’t going to work because i
-                might not refer to the first ball of the frame.
-
-                Design is still wrong.
-                Need to walk through array two balls
-                (one frame) at a time.
-                 */
+        int i = 0;
+        for (int frame = 0; frame < 10; frame++) {
+            if (rolls[frame] + rolls[frame + 1] == 10) {
+                score += 10 + rolls[i + 2];
+                i += 2;
+            } else {
+                score += rolls[i] + rolls[i + 1];
+                i += 2;
             }
-            score += this.rolls[i];
         }
         return score;
     }
