@@ -32,7 +32,6 @@ class BowlingGameTest {
 
     @Test
     @DisplayName("When player roll one spare, his next roll should be double pointed")
-    @Disabled
     void testSingleSpare() {
         rollMany(17, 0);
         game.roll(5);
