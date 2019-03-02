@@ -29,7 +29,17 @@ tenth frame.
 ## TDD - step by step
 
 Each step is commited as separate branch name:
-* tdd_1
-* tdd_2
-* tdd_3
-* ... and so on
+* [tdd_1](https://github.com/towczare/unit-testing-sda/tree/tdd_1) - testing new game creation
+* [tdd_2](https://github.com/towczare/unit-testing-sda/tree/tdd_2) - first test to cover very unlucky player, 0 scores in total
+* [tdd_3](https://github.com/towczare/unit-testing-sda/tree/tdd_3) - making first test pass
+* [tdd_4](https://github.com/towczare/unit-testing-sda/tree/tdd_4) - second test all rolls 1 pin introduced, failing at this stage
+* [tdd_5](https://github.com/towczare/unit-testing-sda/tree/tdd_5) - making second test pass by making smallest possible implementation
+* [tdd_6](https://github.com/towczare/unit-testing-sda/tree/tdd_6) - refactoring some code
+* [tdd_7](https://github.com/towczare/unit-testing-sda/tree/tdd_7) - another test testing spare, failing at this stage
+* [tdd_8](https://github.com/towczare/unit-testing-sda/tree/tdd_8) - we discover bad design, making step back to refactor it for our purposes
+* [tdd_9](https://github.com/towczare/unit-testing-sda/tree/tdd_9) - enable spare test and discovering our design is still not perfect
+* [tdd_10](https://github.com/towczare/unit-testing-sda/tree/tdd_10) - refactoring and implementing required logic to make spare test pass
+* [tdd_11](https://github.com/towczare/unit-testing-sda/tree/tdd_11) - introducing new test strike, failing at this stage
+* [tdd_12](https://github.com/towczare/unit-testing-sda/tree/tdd_12) - implementing strike logic to make new test pass
+* [tdd_13](https://github.com/towczare/unit-testing-sda/tree/tdd_13) - final refactoring of code and adding perfect game test
+
