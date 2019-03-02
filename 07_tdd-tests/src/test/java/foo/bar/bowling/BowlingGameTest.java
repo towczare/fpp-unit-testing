@@ -1,11 +1,7 @@
 package foo.bar.bowling;
 
 import com.sun.org.glassfish.gmbal.Description;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.*;
 
 
 class BowlingGameTest {
@@ -36,6 +32,7 @@ class BowlingGameTest {
 
     @Test
     @DisplayName("When player roll one spare, his next roll should be double pointed")
+    @Disabled
     void testSingleSpare() {
         rollMany(17, 0);
         game.roll(5);
