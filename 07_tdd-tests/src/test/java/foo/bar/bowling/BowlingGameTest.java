@@ -33,8 +33,7 @@ class BowlingGameTest {
     @Test
     @DisplayName("When player roll one spare, his next roll should be double pointed")
     void testSingleSpare() {
-        game.roll(5);
-        game.roll(5); //spare
+        rollSpare();
         game.roll(3);
         rollMany(17, 0);
         Assertions.assertEquals(16, game.score());
@@ -44,5 +43,10 @@ class BowlingGameTest {
         for (int i = 0; i < n; i++) {
             game.roll(pins);
         }
+    }
+
+    private void rollSpare() {
+        game.roll(5);
+        game.roll(5);
     }
 }
