@@ -42,11 +42,18 @@ class BowlingGameTest {
     @Test
     @DisplayName("When player roll one strike, his next 2 rolls should be double pointed")
     void testSingleStrike() {
-        game.roll(10); // strike
+        rollStrike();
         game.roll(3);
         game.roll(4);
         rollMany(16, 0);
         Assertions.assertEquals(24, game.score());
+    }
+
+    @Test
+    @DisplayName("When player roll 10 in each of his rolls, he should get 300 points in total.")
+    void testPerfectGame() {
+        rollMany(12, 10);
+        Assertions.assertEquals(300, game.score());
     }
 
     private void rollMany(int n, int pins) {
@@ -58,5 +65,9 @@ class BowlingGameTest {
     private void rollSpare() {
         game.roll(5);
         game.roll(5);
+    }
+
+    private void rollStrike() {
+        game.roll(10);
     }
 }
