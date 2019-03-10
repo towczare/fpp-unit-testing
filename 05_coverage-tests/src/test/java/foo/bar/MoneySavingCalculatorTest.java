@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-import java.time.Duration;
 import java.time.Period;
 
 public class MoneySavingCalculatorTest {
@@ -21,4 +20,18 @@ public class MoneySavingCalculatorTest {
                         BigDecimal.valueOf(1000), Period.ofYears(1))
         );
     }
+
+    @Test
+    @Description("During two years, once a week with average cost of 60 pln")
+    void twoYearsOnceAWeek60plnSavings() {
+
+        Period twoYears = Period.of(2, 3, 4);
+
+        Assertions.assertEquals(
+                BigDecimal.valueOf(2*52*60),
+                calc.calculateSavings(SavingFrequency.ONCE_WEEK,
+                        BigDecimal.valueOf(60), twoYears)
+        );
+    }
+
 }

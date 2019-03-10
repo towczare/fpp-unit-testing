@@ -1,10 +1,10 @@
 package foo.bar;
 
 public enum SavingFrequency {
-    EACH_DAY,
-    EACH_WEEK,
-    EACH_MONTH,
-    EACH_SECOND_DAY,
-    TWICE_A_WEEK,
-    ONCE_A_YEAR
+    ONCE_DAY,
+    ONCE_TWO_DAYS,
+    ONCE_WEEK,
+    ONCE_MONTH,
+    ONCE_A_YEAR,
+    TWICE_A_WEEK
 }

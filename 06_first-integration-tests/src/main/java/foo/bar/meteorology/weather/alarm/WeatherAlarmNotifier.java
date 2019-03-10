@@ -14,6 +14,10 @@ public class WeatherAlarmNotifier {
     public WeatherAlarmLevel raiseLevelIfNeccessary() {
         Weather weather = weatherService.getWeather();
 
+        if (weather.getWindSpeed() >= 100) {
+            return WeatherAlarmLevel.SECOND_LEVEL;
+        }
+
         return WeatherAlarmLevel.ALL_OK;
     }
 }

@@ -3,6 +3,7 @@ package foo.bar.blockchain;
 import foo.bar.blockchain.external.GlobalIndexExternalService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -19,7 +20,7 @@ public class BlockchainHashGeneratorTest {
         Assertions.assertNotEquals(firstHash.equals(secondHash), "Hashes are equal but should be different");
     }
 
-    GlobalIndexExternalService calcMock = mock(GlobalIndexExternalService.class);
+    GlobalIndexExternalService calcMock = Mockito.mock(GlobalIndexExternalService.class);
     BlockchainHashGenerator generatorWithMock = new BlockchainHashGenerator(calcMock);
 
 
