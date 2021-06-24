@@ -1,6 +1,5 @@
 package foo.bar.bowling;
 
-import com.sun.org.glassfish.gmbal.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,7 +12,7 @@ class BowlingGameTest {
     private BowlingGame game;
 
     @BeforeEach
-    @Description("Starting new game for test purpose")
+    @DisplayName("Starting new game for test purpose")
     void setup() {
         game = new BowlingGame();
     }
