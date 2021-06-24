@@ -1,10 +1,14 @@
 package foo.bar.smog;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.time.LocalTime;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 import static foo.bar.smog.Country.POLAND;
@@ -12,6 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class PmAlarmServiceTest {
+
+    static long startExecution;
 
     @Test
     void shouldReturnNoneForMeasurement_10() {
@@ -51,6 +57,17 @@ class PmAlarmServiceTest {
     void shouldReturnInfoForMeasurement(int measurement, Country country, AlarmLevel expectedAlarm) {
         PmAlarmService service = new PmAlarmService();
         assertEquals(expectedAlarm, service.getAlarmMessage(measurement, country));
+    }
+
+    @BeforeAll
+    static void classSetup() {
+        startExecution = System.currentTimeMillis();
+        Logger.getLogger("JUnit 5").info("Started at " + startExecution);
+    }
+
+    @AfterAll
+    static void classTeardown() {
+        Logger.getLogger("JUnit 5").info("Execution of tests took " + (System.currentTimeMillis() - startExecution) + " ms.");
     }
 
 
