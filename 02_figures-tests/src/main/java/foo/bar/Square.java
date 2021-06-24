@@ -8,7 +8,7 @@ public class Square implements Figure {
         this.a = a;
     }
 
-    public int area() {
+    public double area() {
         return a*a;
     }
     public int circumference() {
